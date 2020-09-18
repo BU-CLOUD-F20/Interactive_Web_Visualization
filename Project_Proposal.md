@@ -1,6 +1,6 @@
 ** **
 
-## MOC-UI Project Proposal
+## Interactive Web Visualization Project Proposal
 
 ## 1. Vision and Goals Of The Project:
 
