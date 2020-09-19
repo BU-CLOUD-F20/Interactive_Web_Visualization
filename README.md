@@ -1,11 +1,3 @@
-# Project Proposal: Interactive, web-based visualization of scientific collaboration networks
-## 1. Vision and Goals of the Project
-## 2. Users/Personas of the Project
-## 3. Scope and Features of the Project
-## 4. Solution Concept
-## 5. Acceptance Criteria
-## 6. Release Planning
-# Interactive_Web_Visualization
 Interactive, web-based visualization of scientific collaboration networks
 
 Mentors:  
