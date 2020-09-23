@@ -9,7 +9,7 @@
 * Provide the ability for researchers to find similar collaborators based on their profiles
 
 ## 2. Users/Personas Of The Project
-Admins at Hariri will go through an authentication process before being able to access the admin UI. Admins will be able to make additions and deletions if necessary. Regular Users will only have the ability to access the information.
+Admins at Hariri will go through an authentication process before being able to access the admin UI. Admins will be able to make additions and deletions if necessary. Regular users will only have the ability to access the information.
 * Target:
    * Faculty affiliates of the Hariri Institute for Computing
    * Potential collaborators and researchers looking for assistance in their work
