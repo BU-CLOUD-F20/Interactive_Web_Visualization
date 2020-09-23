@@ -1,6 +1,11 @@
+# Interactive Web Visualization Project Proposal
+## Members:
+* Ben Leone (bleone90@bu.edu)
+* Ryuichi Ohhata (ryu74@bu.edu)
+* Lukas Rosario (lukasr@bu.edu)
+* Jinyu Tian (jinyutn@bu.edu)
+* Angela Vellante (akv@bu.edu)
 ** **
-
-## Interactive Web Visualization Project Proposal
 
 ## 1. Vision and Goals Of The Project:
 * Provide an intuitive user experience, especially for people outside of BU
