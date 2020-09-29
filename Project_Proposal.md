@@ -8,10 +8,10 @@
 ** **
 
 ## 1. Vision and Goals Of The Project:
-* Provide an intuitive user experience, especially for people outside of BU
-* Serve as a base prototype for other departments
-* Provide a user interface that allows for easy networking and a clear, concise visualization of connected collaborations
-* Provide the ability for researchers to find similar collaborators based on their profiles
+This project focuses on the development of an interactive, web-based visualization around the scientific collaboration network associated with the Hariri Institute faculty affiliates, leveraging data from a bibliographic database.
+*	Provide an intuitive user experience, especially for people outside of BU, that allows for easy networking and a visually pleasing network of connected collaborations
+*	Provide researchers with a tool to find similar collaborators based on their profiles
+*	May serve as a base prototype for other departments
 
 ## 2. Users/Personas Of The Project
 Admins at Hariri will go through an authentication process before being able to access the admin UI. Admins will be able to make additions and deletions if necessary. Regular users will only have the ability to access the information.
@@ -24,21 +24,38 @@ Admins at Hariri will go through an authentication process before being able to 
    * Anyone not interested in the span of multiple computing disciplines and the networking and collaboration done within
 
 ## 3. Scope and Features Of The Project:
-* Minimum Viable Product:
-    * Presents a visually pleasing and easily navigated interface
-        * Regular, unauthorized users and admins
-            * Implement authentication system
-                * Regular users have the ability to see the data on the client server
-                * Admins have the authority to make additions, deletions, etc.
-        * System of linked nodes representing users collaboration
-            * Researchers can find similar collaborators based on their profiles
-            * Option to see direct collaboration and extended/mutual links
-    * Serve as a base prototype for other departments
-        * Showcase the research collaboration at BU
-        * Understand the way computing and data-driven research is like at BU
-    * Scalability: Can scale to a large number of users
-    * Security: Provides secure storage of user credentials, servers, and data
+Minimum Viable Product:
+  * Presents a visually pleasing and easily navigated interface
+    * Dynamic system of linked nodes representing users’ collaboration
+      * Making networks
+        * Link
+          * Published literature, research projects, people
+        * Node
+          * Collaborations
+      * Search/filter feature making it easier to narrow down information and user profiles
+      * Minimum scalability: 250 users
+      * Facilitate group extensibility
+        * Charles River campus and medical campus
+      * Regular user UI:
+        * No authentication needed
+        * Users will have the ability to only see and interact with data on client server
+      * Admin user UI:
+        * Authentication system
+        * Users will have the authority to make additions, deletions, etc. if necessary
+  * Showcase the research collaboration at BU
+    * Helps to understand the way computing and data-driven research is like at BU
+  * Security: Provides secure storage of user credentials, servers, and data
+  
+ Out of scope:
+   * Option to see direct collaboration and extended/mutual links
+   * Live data resource
+     * Update information, ability to see inactive users
+   * May serve as a base prototype for other departments
+     * Scalability: be able to handle more than 250 user profiles
 
+
+
+ 
 ## 4. Solution Concept
 
 Global Architectural Structure Of the Project:
@@ -69,7 +86,7 @@ The minimum acceptance criteria is an interactive, web-based network visualizati
 
 Stretch goals:
 * Analytics implementation for Hariri Institute visualizations
-* CLI for deploying similar visualisations in different settings
+* CLI for deploying similar visualizations in different settings
 * Tooling for custom analytics
 
 ## 6. Release Planning
