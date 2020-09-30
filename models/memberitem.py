@@ -13,7 +13,7 @@ class MemberItem:
     def toJson(self):
         return {
             'id': self.id,
-            'name': self.email,
+            'name': self.name,
             'department': self.department,
             'college': self.college,
             'email': self.email,

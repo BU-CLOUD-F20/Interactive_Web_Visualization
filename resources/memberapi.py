@@ -1,20 +1,23 @@
 from flask_restful import Resource
 from flask import jsonify, request, Response
 from models.memberitem import MemberItem
+import json
+import os.path
 
 class MemberAPI(Resource):
-
-    memberlist = [
-        {
-            'id': 1, 
-            'name': 'test',
-            'department': 'ECE',
-            'college': 'ENG',
-            'email': 'test@test.te',
-            'interests': 'cloud computing',
-            'domains': 'cybersecurity'
-        }
-    ] # this will be removed once db is set up
+    with open(os.path.dirname(__file__) + '/demo.json') as j:
+        memberlist = json.load(j)
+    # memberlist = [
+    #     {
+    #         'id': 1, 
+    #         'name': 'test',
+    #         'department': 'ECE',
+    #         'college': 'ENG',
+    #         'email': 'test@test.te',
+    #         'interests': 'cloud computing',
+    #         'domains': 'cybersecurity'
+    #     }
+    # ] # this will be removed once db is set up
 
     def get(self):
         return self.memberlist

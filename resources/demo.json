@@ -1,0 +1,104 @@
+[
+    {
+        "id": 1,
+        "name": "Bin Gu",
+        "department": "Information Systems",
+        "college": "Questrom School of Business",
+        "email": "bgu@bu.edu",
+        "interests": [
+            "Distributed Systems, and Cloud Computing; Big Data Knowledge Discovery, Management, and Mining", 
+            "Machine Learning and Artificial Intelligence; Visual and Language-Based Human-Computer Interaction", 
+            "Cyber Security of Computer Systems and Networks; Data Privacy and Privacy-preserving Computation"
+        ],
+        "domains": [
+            "Digital Arts and Humanities", 
+            "Digital Health and Rehabilitation Sciences", 
+            "Biostatistics and Public Health", 
+            "Computational Finance and Economics",
+            "Business Intelligence and E-commerce",
+            "Social Networking, Communication, and Emerging Media",
+            "Computational Social and Political Sciences",
+            "Robotics and Autonomous Systems",
+            "Data-driven Urban Planning and Sustainability",
+            "Computational Geo/Environmental Sciences",
+            "Cyber Society, Ethics, and Law"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Reem Waziry",
+        "department": "Neurology",
+        "college": "School of Medicine",
+        "email": "rwaziry@bu.edu",
+        "interests": [
+            "Theoretic and Algorithmic Foundations of Data Science Big Data Knowledge Discovery, Management, and Mining Machine Learning and Artificial Intelligence Visual and Language-Based Human-Computer Interaction"
+        ],
+        "domains": [
+            "Biostatistics and Public Health",
+            "Computational Medicine Bioinformatics, and Genomics",
+            "Computational Neuro, Brain, and Cognitive Sciences"
+        ] 
+    },
+    {
+        "id": 3,
+        "name": "Tesary Lin",
+        "department": "Marketing",
+        "college": "Questrom School of Business",
+        "email": "tesary@bu.edu",
+        "interests": [
+            "Big Data Knowledge Discovery, Management, and Mining; Machine Learning and Artificial Intelligence", 
+            "Data Privacy and Privacy-preserving Computation"
+        ],
+        "domains": [
+            "Computational Finance and Economics",
+            "Business Intelligence and E-commerce",
+            "Computational Social and Political Sciences",
+            "Cyber Society, Ethics, and Law"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Gabriel Ocker",
+        "department": "Mathematics and Statistics",
+        "college": "College of Arts and Sciences",
+        "email": "gkocker@bu.edu",
+        "interests": [
+            "Computing & Data Sciences High-Performance Scientific Computing, Modeling, and Simulation Machine Learning and Artificial Intelligence"
+        ],
+        "domains": [
+            "Computational Neuro, Brain, and Cognitive Sciences"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Hadi Nia",
+        "department": "Biomedical Engineering",
+        "college": "College of Engineering",
+        "email": "htnia@bu.edu",
+        "interests": [
+            "High-Performance Scientific Computing, Modeling, and Simulation, Big Data Knowledge Discovery, Management, and Mining",
+            "Machine Learning and Artificial Intelligence"
+        ],
+        "domains": [
+            "Digital Health and Rehabilitation Sciences",
+            "Biostatistics and Public Health",
+            "Computational Physics, Chemistry, and Material Sciences",
+            "Computational Medicine, Bioinformatics, and Genomics"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Scott Hirst",
+        "department": "School of Law",
+        "college": "School of Law",
+        "email": "hirst@bu.edu",
+        "interests": [
+            "High-Performance Scientific Computing, Modeling, and Simulation; Big Data Knowledge Discovery, Management, and Mining",
+            "Machine Learning and Artificial Intelligence"
+        ],
+        "domains": [
+            "Computational Finance and Economics",
+            "Computational Social and Political Sciences"
+        ]
+    }
+]
