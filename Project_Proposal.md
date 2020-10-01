@@ -84,7 +84,35 @@ Stretch goals:
 * Tooling for custom analytics
 
 ## 6. Release Planning
-* Find user stories and receive feedback from mentors to meet sprint deadlines
-* Sprints: 1-2 weeks with code review and merging of code into a weekly release
-* Detailed pull request with major changes made to code and any sticking points
-* Keep up to date with Taiga project management so that clients are aware of progress/setbacks
+
+* Sprint 1 (Demo: Oct. 1):
+  * As an admin user, I’d like to be able to easily see who’s involved and how they are related to each other
+    * Visualization of network collaborations
+  * As a potential collaborator, I’d like to interact with the visualization in order to make it easier to get in contact with a researcher within the      Institute
+  * As a BU faculty member, I’d like for my contact information to be displayed if a potential collaborator were interested in working with me
+  * configure API
+  * Start constructing D3 front-end
+  * Discuss with mentors what kind of database to use
+  * Keep up to date with Taiga project management so that clients are aware of progress/setbacks
+
+* Sprint 2 (Demo: Oct. 15)：
+  * As a regular user, I would like for my contact and collaboration information to be updated frequently, so I don’t miss out on opportunities
+  * As a user of this network i would like to privately collab with someone in the department of biomedical engineering and maybe someone else within the domain of biostatistics and public health because i need a team for research 
+  * As someone not currently affiliated with computing at BU, I would like to see what work is currently being done so that I can reach out if there are projects that align with my interests and experience
+    * Filter: department, college, domains, interests
+  * Combine D3 front-end with current API
+  * Keep up to date with Taiga project management so that clients are aware of progress/setbacks
+
+* Sprint 3 (Demo: Oct. 29):
+  * TBD
+  * Keep up to date with Taiga project management so that clients are aware of progress/setbacks
+
+* Sprint 4 (Demo: Nov. 12):
+  * TBD
+  * Keep up to date with Taiga project management so that clients are aware of progress/setbacks
+
+* Sprint 5 (Demo: Dec. 3):
+  * Make sure our project's goals and requirements are fulfilled
+  * Verify all features are implemented correctly and working smoothly
+  * Keep up to date with Taiga project management so that clients are aware of progress/setbacks
+
