@@ -20,8 +20,6 @@ Admins at Hariri will go through an authentication process before being able to 
    * Potential collaborators and researchers looking for assistance in their work
    * BU faculty members and non-members who are conducting teaching/training initiatives in computing or computational science 
    * Anyone interested in how the departments and schools at BU work together and what is done in computing at BU
-* Does Not Target:
-   * Anyone not interested in the span of multiple computing disciplines and the networking and collaboration done within
 
 ## 3. Scope and Features Of The Project:
 Minimum Viable Product:
@@ -52,37 +50,33 @@ Minimum Viable Product:
      * Update information, ability to see inactive users
    * May serve as a base prototype for other departments
      * Scalability: be able to handle more than 250 user profiles
-
-
-
  
 ## 4. Solution Concept
-
 Global Architectural Structure Of the Project:
 Below is the system components and their descriptions.
 
 * User UI: Visualization of networks with analysis presented to public
 * Admin UI: Any admin work will be done in this UI.
 * Auth: Authentication is needed for admins to signup/login.
-* DB (DB sandbox?): Data and analysis are stored here. 
+* Database: Data of affiliates and their research are stored here. 
 * Business Logic: All backend jobs such as data analysis will be done here. 
 * Communication: This logic is responsible for the communication between frontend and backend.
-* GET/POST/PUT/DELETE request to the database via restAPI.
+    * GET/POST/PUT/DELETE request to the database via restAPI.
 
 ![image alt text](system_design.png)
 
 **Figure 1: System components. The frontend consists of the UI and the admin UI, and the backend consists of API, business layer, and database layer.**
 
-Figure 1 is a diagram of the overall software lifecycle for this web-based visualization project. It is expected to have two types of users: regular, unauthorized users and admins. The regular users only have GET request privilege, which fetches the data from database via restAPI and displays it on the client server, whereas admins have GET/POST/PUT/DELETE request privileges if necessary. Authentication system will be implemented, so only the admins with the credential can perform such tasks. All the requests that go to the API layer will be handled by the communication logic in the business layer. The communication logic is responsible for all the communications between restAPI and database, as well as sending commands to Analysis logic to compute any analysis. The communication layer, then, sends the analysis result to the database as well as fetching it to update the data on the restAPI. 
+Figure 1 is a diagram of the overall software lifecycle for this web-based visualization project. It is expected to have two types of users: regular, unauthorized users and admins. The regular users only have GET request privilege, which fetches the data from database via restAPI and displays it on the client side, whereas admins have GET/POST/PUT/DELETE request privileges if necessary. Authentication system will be implemented, so only the admins with the credential can perform such tasks. All the requests that go to the API layer will be handled by the communication logic in the business layer. The communication logic is responsible for all the communications between restAPI and database, as well as sending commands to Analysis logic to compute any analysis. The communication layer, then, sends the analysis result to the database as well as fetching it to update the data on the restAPI. 
 
 Design Implications and Discussion:
 * The layers should not have a significant impact on each other. That being said, if any change that’s been made in one layer should have minimal to no effect to other layers. This is to reduce the time to search for bugs when one part of the program fails. 
-* Javascript will be used for the frontend and python will be used for the backend (fact check this).
+* Vanilla Javascript or a JS framework (i.e. React.js) will be used for the frontend and Python and Flask will be used for the backend.
 * The data in restAPI will be fetched from the database per GET request through communication logic. If any changes are made in the database, the updated value will be fetched in the next GET request. 
 * Analysis logic computes the jobs only when the database is updated in order to reduce the loading time. The computational functions will be called with POST/PUT/DELETE requests. GET requests will bypass the analysis logic. 
 
 ## 5. Acceptance criteria
-The minimum acceptance criteria is an interactive, web-based network visualization showing the existing connections between Hariri Institute affiliates.
+The minimum acceptance criteria is an interactive, web-based network visualization showing the existing connections between Hariri Institute affiliates and their research areas.
 
 Stretch goals:
 * Analytics implementation for Hariri Institute visualizations
