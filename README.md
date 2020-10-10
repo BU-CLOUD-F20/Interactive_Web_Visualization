@@ -2,7 +2,7 @@
 
 ## Description:
 
-The Hariri Institute for Computing at Boston University is dedicated to leading integrated initiatives in research and technology development, targeting a broad set of disciplines at the nexus of the computational and data sciences. In turn, the Institute also serves as a window for the outside world – viewed, as it were, through a computational lens — into the impact and potential inherent in Boston University’s computational and data-driven investments. The Institute currently has ~250 faculty affiliates. Currently these are represented on the Institute web pages in a simple table format, with some perfunctory search capabilities. As a result, someone from the outside has little ability to glean insight into what is done in computing at BU. Similarly, someone from the inside has little ability to see how people collaborate and what potential there might be for they themselves to join in. This project would develop an interactive, web-based visualization around the scientific collaboration network associated with our faculty affiliates, leveraging data from a bibliographic database(s). It might additionally provide researchers with a tool to find other similar collaborators based on their research profiles. Fundamentally, it would change the way computing and data-driven research at BU can be understood and likely would serve as a prototype for adoption more broadly in understanding and showcasing research collaboration at BU in general.
+The Hariri Institute for Computing at Boston University is dedicated to leading integrated initiatives in research and technology development, targeting a broad set of disciplines at the nexus of the computational and data sciences. In turn, the Institute also serves as a window for the outside world – viewed, as it were, through a computational lens — into the impact and potential inherent in Boston University’s computational and data-driven investments. The Institute has ~250 faculty affiliates. Currently, these are represented on the Institute web pages in a simple table format, with some perfunctory search capabilities. As a result, someone from the outside has little ability to glean insight into what is done in computing at BU. Similarly, someone from the inside has little ability to see how people collaborate and what potential there might be for they themselves to join in. This project would develop an interactive, web-based visualization around the scientific collaboration network associated with our faculty affiliates, leveraging data from a bibliographic database(s). It might additionally provide researchers with a tool to find other similar collaborators based on their research profiles. Fundamentally, it would change the way computing and data-driven research at BU can be understood and likely would serve as a prototype for adoption more broadly in understanding and showcasing research collaboration at BU in general.
 
 | Members                       | Project Mentors                                                                      |
 | ----------------------------- | ------------------------------------------------------------------------------------ |
@@ -25,7 +25,7 @@ This project focuses on the development of an interactive, web-based visualizati
 
 ## 2. Users/Personas Of The Project:
 
-A user of the network visualization maybe a researcher either within or outside of Boston University. The have recently begun work on an academic paper that is relevent to the work performed at the Hariri institute and found an author who is an affiliate. By searching for this affiliate within the network visualization, they will be able to find other researchers based on co-authored work or similar fields of interest.
+A user of the network visualization may be a researcher either within or outside of Boston University. They have recently begun work on an academic paper that is relevent to the work performed at the Hariri institute and found an author who is an affiliate. By searching for this affiliate within the network visualization, they will be able to find other researchers based on co-authored work or similar fields of interest.
 
 Targets of the network visualization include:
 
@@ -43,7 +43,7 @@ As stated by the description and our inital goals of the project, the MVP includ
 - A clean and intuitive visualization of the collaboration network between affiliates within the Hariri Institute
 
   - Nodes in the visualization are the affiliates
-  - Edges that connect the nodes are primarily the number of collborations
+  - Edges that connect the nodes are primarily the number of collaborations
   - A search/filter function to allow more granularity
   - The network visualization will be dynamic (i.e. clicking on a node displays its connections clearly to the user)
   - Links to academic works will be included, when possible
@@ -51,9 +51,9 @@ As stated by the description and our inital goals of the project, the MVP includ
 - The size of the network will be ~250 affiliates
 
   - Not all affilates will be presented at the initial landing on the visualization
-  - Possible breadown by department to then show affiliates within selected department
+  - Possible breakdown by department to then show affiliates within selected department
 
-- Admin accessability
+- Admin accessibility
   - With consultation from mentors, the database will be updated yearly with the collaborations from SciVal
   - Once new data is entered, the pipeline of DB -> API -> Front-end visualization will be seemless and pass the "monkey-test"
   - Data will be secured within a database accessable to BU admins
