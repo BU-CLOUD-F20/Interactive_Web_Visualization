@@ -190,6 +190,7 @@ bower_components
 
 # misc
 .sass-cache
+.vscode
 connect.lock
 typings
 
