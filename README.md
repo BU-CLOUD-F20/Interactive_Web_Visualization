@@ -55,7 +55,7 @@ As stated by the description and our inital goals of the project, the MVP includ
 
 - Admin accessability
   - With consultation from mentors, the database will be updated yearly with the collaborations from SciVal
-  - Once new data is entered, the pipeline of DB -> API -> Front-end visualization will be seemless and pass the "monkey-test"
+  - Once new data is entered, the pipeline of DB -> API -> Front-end visualization will be seemless and pass the "monkey test"
   - Data will be secured within a database accessable to BU admins
 
 ## 4. Solution Concept
@@ -90,7 +90,7 @@ The minimum acceptance criteria is an interactive, web-based network visualizati
 Stretch goals:
 
 - Analytics implementation for Hariri Institute visualizations
-- CLI for deploying similar visualizations in different settings
+- Template for deploying similar visualizations in different settings
 - Tooling for custom analytics
 
 ## 6. Release Planning
