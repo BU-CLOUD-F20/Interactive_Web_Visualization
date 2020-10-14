@@ -43,7 +43,7 @@ As stated by the description and our inital goals of the project, the MVP includ
 - A clean and intuitive visualization of the collaboration network between affiliates within the Hariri Institute
 
   - Nodes in the visualization are the affiliates
-  - Edges that connect the nodes are primarily the number of collborations
+  - Edges that connect the nodes are primarily the number of collaborations
   - A search/filter function to allow more granularity
   - The network visualization will be dynamic (i.e. clicking on a node displays its connections clearly to the user)
   - Links to academic works will be included, when possible
@@ -51,12 +51,12 @@ As stated by the description and our inital goals of the project, the MVP includ
 - The size of the network will be ~250 affiliates
 
   - Not all affilates will be presented at the initial landing on the visualization
-  - Possible breadown by department to then show affiliates within selected department
+  - Possible breakdown by department to then show affiliates within selected department
 
-- Admin accessability
+- Admin accessibility
   - With consultation from mentors, the database will be updated yearly with the collaborations from SciVal
-  - Once new data is entered, the pipeline of DB -> API -> Front-end visualization will be seemless and pass the "monkey test"
-  - Data will be secured within a database accessable to BU admins
+  - Once new data is entered, the pipeline of DB -> API -> Front-end visualization will be seamless and pass the "monkey test"
+  - Data will be secured within a database accessible to BU admins
 
 ## 4. Solution Concept
 
