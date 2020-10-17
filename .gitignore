@@ -190,8 +190,10 @@ bower_components
 
 # misc
 .sass-cache
+.vscode
 connect.lock
 typings
+postgres_credentials.py
 
 # Logs
 logs
