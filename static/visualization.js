@@ -65,7 +65,7 @@ forceProperties = {
   },
   link: {
     enabled: true,
-    distance: 100,
+    distance: 50,
     iterations: 1,
   },
 };
@@ -175,7 +175,7 @@ function initializeDisplay() {
 // update the display based on the forces (but not positions)
 function updateDisplay() {
   node
-    .attr("r", 12)
+    .attr("r", 8)
     .attr("stroke", "blue")
     .attr("fill", "white")
     .attr("stroke-width", 4);
