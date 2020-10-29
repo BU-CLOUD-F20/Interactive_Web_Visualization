@@ -1,0 +1,16 @@
+{
+  "nodes": [
+    { "id": "Lukas" },
+    { "id": "Ryuichi" },
+    { "id": "Jinyu" },
+    { "id": "Angela" },
+    { "id": "Ben" }
+  ],
+  "links": [
+    { "source": "Lukas", "target": "Ryuichi", "value": 1 },
+    { "source": "Lukas", "target": "Ben", "value": 1 },
+    { "source": "Ben", "target": "Jinyu", "value": 1 },
+    { "source": "Angela", "target": "Jinyu", "value": 1 },
+    { "source": "Angela", "target": "Ben", "value": 1 }
+  ]
+}
