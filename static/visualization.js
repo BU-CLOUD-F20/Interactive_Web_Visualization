@@ -10,7 +10,8 @@ var graph;
 var linkWidthScale = d3.scaleLinear().range([1, 15]);
 
 // load the data
-d3.json("/static/data.json", function (error, _graph) {
+d3.json("http://localhost:5000/graph", function (error, _graph) {
+  console.log(_graph);
   if (error) throw error;
   graph = _graph;
   linkWidthScale.domain(
@@ -69,7 +70,7 @@ forceProperties = {
   },
 };
 
-var linkWidthScale = d3.scaleLinead().range([1, 15]);
+var linkWidthScale = d3.scaleLinear().range([1, 15]);
 
 // add forces to the simulation
 function initializeForces() {

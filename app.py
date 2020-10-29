@@ -54,13 +54,25 @@ class Paper(db.Model):
 
 class Author(db.Model):
     __tablename__ = 'authors'
-    affiliate_id = db.Column(db.Integer, primary_key=True)
-    paper_id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
+    affiliate_id = db.Column(db.Integer)
+    paper_id = db.Column(db.Integer)
+
+    def __init__(self, affiliate_id, paper_id):
+        self.affiliate_id = affiliate_id
+        self.paper_id = paper_id
 
 class Link(db.Model):
     __tablename__ = 'links'
-    id_1 = db.Column(db.Integer, primary_key=True)
-    id_2 = db.Column(db.Integer, primary_kay=True)
+    id = db.Column(db.Integer, primary_key=True)
+    name_1 = db.Column(db.String(200))
+    name_2 = db.Column(db.String(200))
+    count = db.Column(db.Integer)
+
+    def __init__(self, name_1, name_2, count):
+        self.name_1 = name_1
+        self.name_2 = name_2
+        self.count = count
 
 
 # Affiliate Schema used to for API retrieval
@@ -76,10 +88,15 @@ class AuthorSchema(ma.Schema):
     class Meta:
         fields = ('affiliate_id', 'paper_id')
 
+class LinkSchema(ma.Schema):
+    class Meta:
+        fields = ('id', 'name_1', 'name_2', 'count')
+
 # Init schema
 affiliates_schema = AffiliatesSchema(many=True)
 paper_schema = PaperSchema(many=True)
 author_schema = AuthorSchema(many=True)
+link_schema = LinkSchema(many=True)
 
 
 @app.route("/", methods=["GET"])
@@ -94,26 +111,64 @@ def get_affiliates():
 def new_entity():
     if request.method == "POST":
         if "affiliate" in request.form:
-            print("affiliate")
             affiliate = Affiliate(
                 fullname=request.form["fullname"], 
                 department=request.form["department"], 
-                college=request.form["college"])
+                college=request.form["college"]
+            )
             db.session.add(affiliate)
             db.session.commit()
+
         elif "paper" in request.form:
-            print("paper")
-            paper = Affiliate(
+            paper = Paper(
                 title=request.form["title"], 
-                year=request.form["year"])
+                year=request.form["year"]
+            )
             db.session.add(paper)
-            authors = request.form["authors"].split(",")
-            if len(authors > 1):
-                for author in request.form["authors"].split(","):
-                    pass
             db.session.commit()
-        # affiliate = Affiliate(fullname="")
-    return render_template("new.html") 
+
+            authors = request.form["authors"].split(",")
+            if len(authors) > 1:
+                for i in range(len(authors)):
+                    for j in range(i + 1, len(authors)):
+                        # user = db.session.query(Affiliate).filter_by(fullname="Orran Krieger", id=2).first()
+                        try:
+                            link = db.session.query(Link).filter_by(name_1=authors[i], name_2=authors[j]).first()
+                        except:
+                            db.session.rollback()
+                            try:
+                                link = db.session.query(Link).filter_by(name_1=authors[j], name_2=authors[i]).first()
+                            except:
+                                db.session.rollback()
+                                link = None
+
+                        if link is None:
+                            new_link = Link(
+                                name_1=authors[i],
+                                name_2=authors[j],
+                                count=1
+                            )
+                            db.session.add(new_link)
+                        else:
+                            current_count = link.count
+                            link.count = current_count + 1
+                        db.session.commit()
+    return render_template("new.html")
+
+@app.route("/graph", methods=["GET"])
+def get_graph():
+    all_links = Link.query.all()
+    result = link_schema.dump(all_links)
+    nodes = set()
+    for link in result:
+        nodes.add(link["name_1"])
+        nodes.add(link["name_2"])
+    nodes = list(nodes)
+    nodes = [{"id": node} for node in nodes]
+    links = [{"source": link["name_1"], "target": link["name_2"], "value": link["count"]} for link in result]
+    ret = {'nodes': nodes, 'links': links}
+    if result != '':
+        return jsonify(ret)
 
 if __name__ == "__main__":
     app.run()
