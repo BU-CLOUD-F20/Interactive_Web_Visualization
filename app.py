@@ -131,7 +131,6 @@ def new_entity():
             if len(authors) > 1:
                 for i in range(len(authors)):
                     for j in range(i + 1, len(authors)):
-                        # user = db.session.query(Affiliate).filter_by(fullname="Orran Krieger", id=2).first()
                         try:
                             link = db.session.query(Link).filter_by(name_1=authors[i], name_2=authors[j]).first()
                         except:

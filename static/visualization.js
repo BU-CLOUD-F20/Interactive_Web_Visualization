@@ -43,7 +43,7 @@ forceProperties = {
   },
   charge: {
     enabled: true,
-    strength: -300,
+    strength: -30,
     distanceMin: 1,
     distanceMax: 2000,
   },
@@ -65,7 +65,7 @@ forceProperties = {
   },
   link: {
     enabled: true,
-    distance: 50,
+    distance: 75,
     iterations: 1,
   },
 };
@@ -163,11 +163,15 @@ function initializeDisplay() {
 
   node
     .append("text")
-    .attr("x", 12)
+    .attr("dx", 12)
     .attr("dy", ".35em")
     .text(function (d) {
       return d.id;
-    });
+    })
+    .style("stroke", "black")
+    .style("stroke-width", 0.5)
+    .style("fill", "black")
+    .style("font-size", "24px");
   // visualize the graph
   updateDisplay();
 }
@@ -175,7 +179,7 @@ function initializeDisplay() {
 // update the display based on the forces (but not positions)
 function updateDisplay() {
   node
-    .attr("r", 8)
+    .attr("r", 10)
     .attr("stroke", "blue")
     .attr("fill", "white")
     .attr("stroke-width", 4);
