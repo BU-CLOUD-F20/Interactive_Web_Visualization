@@ -101,33 +101,48 @@ Stretch goals:
     - Visualization of network collaborations
   - As a potential collaborator, I’d like to interact with the visualization in order to make it easier to get in contact with a researcher within the Institute
   - As a BU faculty member, I’d like for my contact information to be displayed if a potential collaborator were interested in working with me
-  - configure API
+    - configure API
   - Start constructing D3 front-end
   - Discuss with mentors what kind of database to use
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
+  - As a researcher, I’d like to interact with the visualization in order to make it easier to get in contact with faculty within the Institute
+    - Create an API that pulls the information from the DB
 
   _Demo 1 - API call working to static DB; D3.js demo of team network_
 
 - Sprint 2 (Demo: Oct. 15)：
 
   - As a regular user, I would like for my contact and collaboration information to be updated frequently, so I don’t miss out on opportunities
-  - As a user of this network i would like to privately collab with someone in the department of biomedical engineering and maybe someone else within the domain of biostatistics and public health because i need a team for research
+  - As a user of this network I would like to privately collab with someone in the department of biomedical engineering and maybe someone else within the domain of biostatistics and public health because i need a team for research
   - As someone not currently affiliated with computing at BU, I would like to see what work is currently being done so that I can reach out if there are projects that align with my interests and experience
     - Filter: department, college, domains, interests
   - Combine D3 front-end with current API
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
-
+  - User 
+    - See (sample) data that is from the current affiliates list in a web page served from the database   
+    - Work towards using that in a visualization 
+  - Developer
+    - Understand more clearly how we can integrate what we’re creating into BU’s WordPress environment
+    - Create a simple “drag-and-drop” flow so that admins of the page can simply upload a CSV to the site and the rest will be handled by the application
+    
 - Sprint 3 (Demo: Oct. 29):
 
-  - TBD
+  - Create a visualization from our API into our front-end and eventually into WordPress
+  - Implement analysis from SciVal into the network to show meaningful connections between nodes (researchers)
+  - Find hosting solution for the data and a way for Institute admins to access it
+  - Update project management with more concise user stories and specific tasks
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
-
+  
 - Sprint 4 (Demo: Nov. 12):
 
-  - TBD
+  - Imbed the visualization into WordPress
+  - Implement analysis from SciVal into the network to show meaningful connections between nodes (researchers)
+  - Continue to update project management with more concise user stories and specific tasks
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
-
+  - Come to a consensus of what is wanted for the UI/UX experience
+  
 - Sprint 5 (Demo: Dec. 3):
+
   - Make sure our project's goals and requirements are fulfilled
   - Verify all features are implemented correctly and working smoothly
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
