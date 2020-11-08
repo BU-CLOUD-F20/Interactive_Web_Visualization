@@ -20,6 +20,7 @@ class MemberAPI(Resource):
     # ] # this will be removed once db is set up
 
     def get(self):
+        print(self.memberlist)
         return self.memberlist
 
     #admin use only
