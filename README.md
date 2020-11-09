@@ -95,13 +95,13 @@ Stretch goals:
 
 ## 6. Release Planning
 
-- Sprint 1 (Demo: Oct. 1):
+- [Sprint 1](https://github.com/BU-CLOUD-F20/Interactive_Web_Visualization/blob/master/images/Demo_1.pdf) (Demo: Oct. 1):
 
   - As an admin user, I’d like to be able to easily see who’s involved and how they are related to each other
     - Visualization of network collaborations
   - As a potential collaborator, I’d like to interact with the visualization in order to make it easier to get in contact with a researcher within the Institute
   - As a BU faculty member, I’d like for my contact information to be displayed if a potential collaborator were interested in working with me
-    - configure API
+    - Configure API
   - Start constructing D3 front-end
   - Discuss with mentors what kind of database to use
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
@@ -110,7 +110,7 @@ Stretch goals:
 
   _Demo 1 - API call working to static DB; D3.js demo of team network_
 
-- Sprint 2 (Demo: Oct. 15)：
+- [Sprint 2](https://github.com/BU-CLOUD-F20/Interactive_Web_Visualization/blob/master/images/Demo_2.pdf) (Demo: Oct. 15)：
 
   - As a regular user, I would like for my contact and collaboration information to be updated frequently, so I don’t miss out on opportunities
   - As a user of this network I would like to privately collab with someone in the department of biomedical engineering and maybe someone else within the domain of biostatistics and public health because i need a team for research
@@ -125,7 +125,7 @@ Stretch goals:
     - Understand more clearly how we can integrate what we’re creating into BU’s WordPress environment
     - Create a simple “drag-and-drop” flow so that admins of the page can simply upload a CSV to the site and the rest will be handled by the application
     
-- Sprint 3 (Demo: Oct. 29):
+- [Sprint 3](https://github.com/BU-CLOUD-F20/Interactive_Web_Visualization/blob/master/images/Demo_3.pdf) (Demo: Oct. 29):
 
   - Create a visualization from our API into our front-end and eventually into WordPress
   - Implement analysis from SciVal into the network to show meaningful connections between nodes (researchers)
