@@ -194,6 +194,7 @@ bower_components
 connect.lock
 typings
 postgres_credentials.py
+openshift_credentials.py
 
 # Logs
 logs
