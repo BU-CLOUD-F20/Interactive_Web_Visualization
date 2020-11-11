@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 # Create own credential file for development to use postgres DB
 import postgres_credentials
+import test_data
 
 app = Flask(__name__)
 CORS(app)
@@ -168,6 +169,10 @@ def get_graph():
     ret = {'nodes': nodes, 'links': links}
     if result != '':
         return jsonify(ret)
+
+@app.route("/test", methods=["GET"])
+def get_test():
+    return jsonify(test_data.data)
 
 if __name__ == "__main__":
     app.run()
