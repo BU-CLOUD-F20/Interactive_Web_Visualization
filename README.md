@@ -134,16 +134,16 @@ Stretch goals:
   - Update project management with more concise user stories and specific tasks
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
   
-- Sprint 4 (Demo: Nov. 12):
+- [Sprint 4](https://github.com/BU-CLOUD-F20/Interactive_Web_Visualization/blob/master/images/Demo_4.pdf) (Demo: Nov. 12):
 
-  - Imbed the visualization into WordPress
-  - Implement analysis from SciVal into the network to show meaningful connections between nodes (researchers)
+  - Connect API to our remote database
+  - Come to a consensus of what is wanted for the UI/UX experience
   - Continue to update project management with more concise user stories and specific tasks
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
-  - Come to a consensus of what is wanted for the UI/UX experience
   
 - Sprint 5 (Demo: Dec. 3):
-
+  - Imbed the visualization into WordPress
+  - Implement analysis from SciVal into the network to show meaningful connections between nodes (researchers)
   - Make sure our project's goals and requirements are fulfilled
   - Verify all features are implemented correctly and working smoothly
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
