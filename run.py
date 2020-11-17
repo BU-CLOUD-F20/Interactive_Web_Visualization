@@ -1,28 +1,23 @@
-from flask import Flask
-from app import api_bp
+from flask import Flask, jsonify
 from flask_cors import CORS
 from algorithms.parsescival import parse_scival as ps
 import os, time
+from flask_sqlalchemy import SQLAlchemy
+from flask_marshmallow import Marshmallow
+from sqlalchemy import create_engine, Table, Column, MetaData, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
-def load_data():
-    current_path = os.path.dirname((os.path.realpath(__file__)))
-    sheet_path = current_path + '/' + 'scivalsheets/'
-    preset = []
-    for filename in os.listdir(sheet_path):
-        preset += (ps().getXLS(os.path.join(sheet_path, filename)))
+app = Flask(__name__)
+CORS(app)
 
-    print(preset)
-
-def create_app():
-    app = Flask(__name__)
-
+def load_api():
+    from app import api_bp
     app.register_blueprint(api_bp, url_prefix="/api")
 
-    CORS(app)
-
-    return app
-
 if __name__ == "__main__":
-    load_data()
-    app = create_app()
+    # app = create_app()
+    # affiliates_schema = load_item()
+    # load_item()
+    load_api()
     app.run(debug=True, port=8080, host='0.0.0.0')
