@@ -15,13 +15,17 @@ class parse_affiliate:
         department = data['Deparment']
         college = data['College']
         email = data['BU Email']
+        interests = data[' Interests']
+        domains = data['Domains']
 
         for n in range(len(full_name)):
             item = {
                 "name": full_name[n],
-                "departmenet": department[n],
+                "department": department[n],
                 "college": college[n],
-                "email": email[n]
+                "email": email[n],
+                "interests": interests[n],
+                "domains": domains[n]
             }
 
             item_list.append(item)

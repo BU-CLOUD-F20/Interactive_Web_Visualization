@@ -15,27 +15,27 @@ db_string = os.getenv('DB_PASS')
 db = create_engine(db_string)
 base = declarative_base()
 
-class MemberAPI(Resource):
+class InfoAPI(Resource):
     # with open(os.path.dirname(__file__) + '/demo.json') as j:
     
     
-    from models.memberitem import MemberItem
+    from models.infoitem import InfoItem
     Session = sessionmaker(db)
     session = Session()
     # memberlist = Affiliate_Member
 
     base.metadata.create_all(db)
-    members = session.query(MemberItem)
+    members = session.query(InfoItem)
     memberlist = []
     for member in members:
         memberlist.append({
             "id": member.id,
-            "title": member.title,
-            "authors": member.authors,
-            "scopusIds": member.scopusIds,
-            "year": member.year,
-            "citations": member.citations,
-            "weight": member.weight
+            "name": member.name,
+            "department": member.department,
+            "college": member.college,
+            "email": member.email,
+            "interests": member.interests,
+            "domains": member.domains
         })
 
 
@@ -64,7 +64,3 @@ class MemberAPI(Resource):
                 return {"message": "update success"}, 201
 
         return {"message": "item not found"}, 404
-
-
-
-        

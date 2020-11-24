@@ -5,7 +5,12 @@ from sqlalchemy.orm import sessionmaker
 import os
 from algorithms.parsescival import parse_scival as ps
 
-db_string = "postgres://postgres:ec528password@database-1.cs5w0p0igzwb.us-east-1.rds.amazonaws.com"
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+
+db_string = os.getenv('DB_PASS')
+
 
 db = create_engine(db_string)  
 base = declarative_base()
