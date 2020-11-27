@@ -20,7 +20,7 @@ class parse_affiliate:
 
         for n in range(len(full_name)):
             item = {
-                "name": full_name[n],
+                "name": full_name[n].strip(),
                 "department": department[n],
                 "college": college[n],
                 "email": email[n],

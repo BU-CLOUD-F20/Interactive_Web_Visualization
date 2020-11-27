@@ -36,7 +36,7 @@ data = pa.getXLS()
 
 for n in range(len(data)):
     item = Affiliate_INFO(
-        name=data[n]['name'],
+        name=data[n]['name'].strip(),
         department=data[n]['department'],
         college=data[n]['college'],
         email=data[n]['email'],
