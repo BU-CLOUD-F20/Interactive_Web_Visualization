@@ -148,6 +148,30 @@ function initializeDisplay() {
     .data(graph.nodes)
     .enter()
     .append('circle')
+    .on("mouseover", function(){
+      d3.select(this)
+        .style("fill", "aliceblue")
+        .transition()
+        .attr('r', 20);
+    })
+    .on("mouseout", function(){
+      d3.select(this)
+        .style("fill", "white")
+        .transition()
+        .attr('r', 10);
+    })
+    .on("mousedown", function(d) {
+
+      // displays information on click
+      // can't figure out how to display not in svg
+      svg.selectAll("text").remove();
+      svg.append("text")
+        .attr("x", 10)
+        .attr("y", 20)
+        .text("Name: " + d.id + "<br/>" 
+        + " Email: " );
+    
+    })
     .call(
       d3
         .drag()
@@ -160,6 +184,8 @@ function initializeDisplay() {
   node.append('title').text(function (d) {
     return d.id;
   });
+
+
 
   node
     .append('text')
