@@ -1,18 +1,25 @@
-var svg = d3.select('svg'),
-  width = svg.node().getBoundingClientRect().width,
-  height = svg.node().getBoundingClientRect().height;
+var svg = d3.select('svg')
+      .append("svg")
+      .attr("width", "100%")
+      .attr("height", "100%")
+      .call(d3.zoom().on("zoom", function () {
+        svg.attr("transform", d3.event.transform)
+      }))
+      .append("g"),
+  width = 1000,
+  height = 1000;
 
 // svg objects
 var link, node;
+var node_texts;
+var color;
 // the data - an object with nodes and links
 var graph;
-
 var linkWidthScale = d3.scaleLinear().range([1, 15]);
-
 // load the data
-d3.json('http://localhost:5000/test', function (error, _graph) {
+d3.json('https://api.jsonbin.io/b/5fc2c9829abe4f6e7cacc7a9', function (error, _graph) {
   console.log(_graph);
-  if (error) throw error;
+  // if (error) throw error;
   graph = _graph;
   linkWidthScale.domain(
     d3.extent(graph.links, function (d) {
@@ -22,19 +29,15 @@ d3.json('http://localhost:5000/test', function (error, _graph) {
   initializeDisplay();
   initializeSimulation();
 });
-
 //////////// FORCE SIMULATION ////////////
-
 // force simulator
 var simulation = d3.forceSimulation();
-
 // set up the simulation and event to update locations after each tick
 function initializeSimulation() {
   simulation.nodes(graph.nodes);
   initializeForces();
   simulation.on('tick', ticked);
 }
-
 // values for all forces
 forceProperties = {
   center: {
@@ -48,30 +51,29 @@ forceProperties = {
     distanceMax: 2000
   },
   collide: {
-    enabled: true,
+    enabled: false,
     strength: 0.7,
     iterations: 1,
     radius: 5
   },
   forceX: {
     enabled: true,
-    strength: 0.1,
+    strength: 0.05,
     x: 0.5
   },
   forceY: {
-    enabled: false,
-    strength: 0.1,
+    enabled: true,
+    strength: 0.05,
     y: 0.5
   },
   link: {
     enabled: true,
-    distance: 75,
+    distance: 150,
     iterations: 1
   }
 };
-
 var linkWidthScale = d3.scaleLinear().range([1, 15]);
-
+//var nodeRadiusScale = d3.scaleLinear().range([1, 15]);
 // add forces to the simulation
 function initializeForces() {
   // add forces and associate each with a name
@@ -85,6 +87,7 @@ function initializeForces() {
   // apply properties to each of the forces
   updateForces();
 }
+
 
 // apply new force properties
 function updateForces() {
@@ -115,22 +118,22 @@ function updateForces() {
     .y(height * forceProperties.forceY.y);
   simulation
     .force('link')
-    .id(function (d) {
-      return d.id;
+    .id(function (d, i) {
+      return d.index;
     })
     .distance(forceProperties.link.distance)
     .iterations(forceProperties.link.iterations)
     .links(forceProperties.link.enabled ? graph.links : []);
-
   // updates ignored until this is run
   // restarts the simulation (important if simulation has already slowed down)
   simulation.alpha(1).restart();
 }
-
 //////////// DISPLAY ////////////
-
 // generate the svg objects and force simulation
 function initializeDisplay() {
+
+
+
   // set the data and properties of link lines
   link = svg
     .append('g')
@@ -139,7 +142,7 @@ function initializeDisplay() {
     .data(graph.links)
     .enter()
     .append('line');
-
+  // click the link
   // set the data and properties of node circles
   node = svg
     .append('g')
@@ -150,13 +153,11 @@ function initializeDisplay() {
     .append('circle')
     .on("mouseover", function(){
       d3.select(this)
-        .style("fill", "aliceblue")
         .transition()
         .attr('r', 20);
     })
     .on("mouseout", function(){
       d3.select(this)
-        .style("fill", "white")
         .transition()
         .attr('r', 10);
     })
@@ -170,7 +171,6 @@ function initializeDisplay() {
         .attr("y", 20)
         .text("Name: " + d.id + "<br/>" 
         + " Email: " );
-    
     })
     .call(
       d3
@@ -179,37 +179,38 @@ function initializeDisplay() {
         .on('drag', dragged)
         .on('end', dragended)
     );
+  // click the node
+  node.on("click",function(d,i){
+            d3.select(this).attr("fill","red");
+        });
 
-  // node tooltip
-  node.append('title').text(function (d) {
-    return d.id;
-  });
+  // set the node texts
+  node_texts = svg
+     .append('g')
+     .selectAll("text")
+     .data(graph.nodes)
+     .enter()
+     .append("text")
+     .style('fill', 'black')
+     .attr("dx", 12)
+     .attr("dy", '.35em')
+     .text(function(d){
+        return d.id;
+     });
 
-
-
-  node
-    .append('text')
-    .attr('dx', 12)
-    .attr('dy', '.35em')
-    .text(function (d) {
-      return d.id;
-    })
-    .style('stroke', 'black')
-    .style('stroke-width', 0.5)
-    .style('fill', 'black')
-    .style('font-size', '24px');
   // visualize the graph
   updateDisplay();
 }
-
 // update the display based on the forces (but not positions)
 function updateDisplay() {
+  color = d3.scaleOrdinal()
+    .domain(d3.range(node.length))
+    .range(d3.schemeCategory10);
   node
     .attr('r', 10)
-    .attr('stroke', 'blue')
-    .attr('fill', 'white')
-    .attr('stroke-width', 4);
-
+    .attr("fill",function(d,i){
+    			return color(d.id);
+    })
   link
     .attr('stroke-width', function (d) {
       return linkWidthScale(d.value);
@@ -217,7 +218,6 @@ function updateDisplay() {
     .attr('stroke', 'rgb(0,0,0, 0.5)')
     .attr('opacity', 1);
 }
-
 // update the display positions after each simulation tick
 function ticked() {
   link
@@ -233,7 +233,6 @@ function ticked() {
     .attr('y2', function (d) {
       return d.target.y;
     });
-
   node
     .attr('cx', function (d) {
       return d.x;
@@ -241,35 +240,31 @@ function ticked() {
     .attr('cy', function (d) {
       return d.y;
     });
+  node_texts.attr("x", function(d){ return d.x; })
+    .attr("y", function(d){ return d.y; });
   d3.select('#alpha_value').style('flex-basis', simulation.alpha() * 100 + '%');
 }
-
 //////////// UI EVENTS ////////////
-
 function dragstarted(d) {
   if (!d3.event.active) simulation.alphaTarget(0.3).restart();
   d.fx = d.x;
   d.fy = d.y;
 }
-
 function dragged(d) {
   d.fx = d3.event.x;
   d.fy = d3.event.y;
 }
-
 function dragended(d) {
   if (!d3.event.active) simulation.alphaTarget(0.0001);
   d.fx = null;
   d.fy = null;
 }
-
 // update size-related forces
 d3.select(window).on('resize', function () {
   width = svg.node().getBoundingClientRect().width;
   height = svg.node().getBoundingClientRect().height;
   updateForces();
 });
-
 // convenience function to update everything (run after UI input)
 function updateAll() {
   updateForces();
