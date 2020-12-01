@@ -31,7 +31,12 @@ class RelationAPI(Resource):
     def __compute(self):
         for name in self.names:
             self.namelist.append({
-                "id": name.name
+                "id": name.name,
+                "department": name.department,
+                "college": name.college,
+                "email": name.email,
+                "interests": name.interests,
+                "domains": name.domains
             })
 
         for relation in self.relations:
