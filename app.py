@@ -1,13 +1,17 @@
-from flask import Blueprint
-from flask_restful import Api
-from resources.memberapi import MemberAPI
-from resources.infoapi import InfoAPI
-from resources.relationapi import RelationAPI
+from flask import Flask, jsonify
+from flask_cors import CORS
 
 
-api_bp = Blueprint('api', __name__)
-api = Api(api_bp)
+app = Flask(__name__)
+CORS(app)
 
-api.add_resource(MemberAPI, '/v1/members') 
-api.add_resource(InfoAPI, '/v1/info')
-api.add_resource(RelationAPI, '/v1/relations')
+def load_api():
+    from run import api_bp
+    app.register_blueprint(api_bp, url_prefix="/api")
+
+if __name__ == "__main__":
+    # app = create_app()
+    # affiliates_schema = load_item()
+    # load_item()
+    load_api()
+    app.run(debug=True, port=8080, host='0.0.0.0')

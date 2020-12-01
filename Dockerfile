@@ -9,4 +9,4 @@ EXPOSE 8080
 COPY . .
 
 # might need to find a way to do flask run
-CMD ["python", "run.py"] 
+CMD ["python", "app.py"] 
