@@ -12,12 +12,16 @@ var svg = d3.select('svg')
 var link, node;
 var node_texts;
 var color;
+var toggle = 0;
 // the data - an object with nodes and links
 var graph;
 var linkWidthScale = d3.scaleLinear().range([1, 15]);
+var linkedByIndex = {};
+
+
 // load the data
 d3.json('https://api.jsonbin.io/b/5fc2c9829abe4f6e7cacc7a9', function (error, _graph) {
-  console.log(_graph);
+  //console.log(_graph);
   // if (error) throw error;
   graph = _graph;
   linkWidthScale.domain(
@@ -27,10 +31,17 @@ d3.json('https://api.jsonbin.io/b/5fc2c9829abe4f6e7cacc7a9', function (error, _g
   );
   initializeDisplay();
   initializeSimulation();
+  for (i = 0; i < graph.nodes.length; i++) {
+      linkedByIndex[i + "," + i] = 1;
+  };
+  graph.links.forEach(function (d) {
+      linkedByIndex[d.source.index + "," + d.target.index] = 1;
+  });
+  console.log(linkedByIndex)
 });
+
+
 //////////// FORCE SIMULATION ////////////
-
-
 
 // force simulator
 var simulation = d3.forceSimulation();
@@ -56,7 +67,7 @@ forceProperties = {
     enabled: false,
     strength: 0.7,
     iterations: 1,
-    radius: 50 // was 20
+    radius: 50
   },
   forceX: {
     enabled: true,
@@ -70,7 +81,7 @@ forceProperties = {
   },
   link: {
     enabled: true,
-    distance: 120,
+    distance: 100,
     iterations: 1
   }
 };
@@ -131,6 +142,7 @@ function updateForces() {
 //////////// DISPLAY ////////////
 // generate the svg objects and force simulation
 function initializeDisplay() {
+
   // set the data and properties of link lines
   link = svg
     .append('g')
@@ -158,11 +170,24 @@ function initializeDisplay() {
       d3.select(this)
         .transition()
         .attr('r', 10);
+      node.style('opacity', 1);
+      link.attr('opacity',1);
     })
     // clicking on a node displays info
     .on("mousedown", function(d) {
+      // display info when node is clicked
       d3.select('.info')
       .text(`${d.id}`);
+      // highlighting direct links and fading undirect links
+      var thisNode = d.id
+      link.attr("opacity", function(d) {
+        return (d.source.id == thisNode || d.target.id == thisNode) ? 1 : 0.1
+      });
+      // highlighting direct nodes and fading undirect nodes
+      d = d3.select(this).node().__data__;
+      node.style("opacity", function (o) {
+        return neighboring(d, o) | neighboring(o, d) ? 1 : 0.2;
+      });
     })
     .call(
       d3
@@ -171,10 +196,6 @@ function initializeDisplay() {
         .on('drag', dragged)
         .on('end', dragended)
     );
-  // click the node
-  // node.on("click",function(d,i){
-  //           d3.select(this).attr("fill","red");
-  //       });
 
   // set the node texts
   node_texts = svg
@@ -203,6 +224,7 @@ function updateDisplay() {
     .attr("fill",function(d,i){
     			return color(d.id);
     })
+    .attr('opacity', 1);
   link
     .attr('stroke-width', function (d) {
       return linkWidthScale(d.value);
@@ -237,6 +259,13 @@ function ticked() {
   d3.select('#alpha_value').style('flex-basis', simulation.alpha() * 100 + '%');
 }
 //////////// UI EVENTS ////////////
+
+
+
+function neighboring(a, b) {
+    return linkedByIndex[a.index + "," + b.index];
+}
+
 function dragstarted(d) {
   if (!d3.event.active) simulation.alphaTarget(0.3).restart();
   d.fx = d.x;
