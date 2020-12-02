@@ -14,4 +14,4 @@ if __name__ == "__main__":
     # affiliates_schema = load_item()
     # load_item()
     load_api()
-    app.run(debug=True, port=8080, host="http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud")
+    app.run(debug=True, port=8080, host="0.0.0.0")
