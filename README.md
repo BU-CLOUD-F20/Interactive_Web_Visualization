@@ -149,10 +149,10 @@ Stretch goals:
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
   
   ## 7. Others
-  # Endpoint Description
+  ### Endpoint Description
   
-  API endpoints are hosted on OpenShift. 
-  http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/relations: Lists affiliates under "nodes" and their co-authorships under "links".
-  http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/info: Information about each affiliates.
-  http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/members: Affiliates' published papers. 
+  API endpoints are hosted on OpenShift. <br>
+  - http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/relations: Lists affiliates under "nodes" and their co-authorships under "links".
+  - http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/info: Information about each affiliates.
+  - http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/members: Affiliates' published papers. 
   
