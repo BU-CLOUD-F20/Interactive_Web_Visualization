@@ -29,6 +29,8 @@ class RelationAPI(Resource):
     namelist = []
 
     def __compute(self):
+        self.namelist = [] # intialize
+        self.relationlist = []
         for name in self.names:
             self.namelist.append({
                 "id": name.name,
