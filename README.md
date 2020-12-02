@@ -2,7 +2,6 @@
 
 ## Description:
 
-
 The Hariri Institute for Computing at Boston University is dedicated to leading integrated initiatives in research and technology development, targeting a broad set of disciplines at the nexus of the computational and data sciences. In turn, the Institute also serves as a window for the outside world – viewed, as it were, through a computational lens — into the impact and potential inherent in Boston University’s computational and data-driven investments. The Institute currently has ~250 faculty affiliates. Currently these are represented on the Institute web pages in a simple table format, with some perfunctory search capabilities. As a result, someone from the outside has little ability to glean insight into what is done in computing at BU. Similarly, someone from the inside has little ability to see how people collaborate and what potential there might be for they themselves to join in. This project would develop an interactive, web-based visualization around the scientific collaboration network associated with our faculty affiliates, leveraging data from a bibliographic database(s). It might additionally provide researchers with a tool to find other similar collaborators based on their research profiles. Fundamentally, it would change the way computing and data-driven research at BU can be understood and likely would serve as a prototype for adoption more broadly in understanding and showcasing research collaboration at BU in general.
 
 | Members                       | Project Mentors                                                                      |
@@ -119,13 +118,13 @@ Stretch goals:
     - Filter: department, college, domains, interests
   - Combine D3 front-end with current API
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
-  - User 
-    - See (sample) data that is from the current affiliates list in a web page served from the database   
-    - Work towards using that in a visualization 
+  - User
+    - See (sample) data that is from the current affiliates list in a web page served from the database
+    - Work towards using that in a visualization
   - Developer
     - Understand more clearly how we can integrate what we’re creating into BU’s WordPress environment
     - Create a simple “drag-and-drop” flow so that admins of the page can simply upload a CSV to the site and the rest will be handled by the application
-    
+
 - [Sprint 3](https://github.com/BU-CLOUD-F20/Interactive_Web_Visualization/blob/master/images/Demo_3.pdf) (Demo: Oct. 29):
 
   - Create a visualization from our API into our front-end and eventually into WordPress
@@ -133,26 +132,27 @@ Stretch goals:
   - Find hosting solution for the data and a way for Institute admins to access it
   - Update project management with more concise user stories and specific tasks
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
-  
+
 - [Sprint 4](https://github.com/BU-CLOUD-F20/Interactive_Web_Visualization/blob/master/images/Demo_4.pdf) (Demo: Nov. 12):
 
   - Connect API to our remote database
   - Come to a consensus of what is wanted for the UI/UX experience
   - Continue to update project management with more concise user stories and specific tasks
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
-  
+
 - Sprint 5 (Demo: Dec. 3):
   - Imbed the visualization into WordPress
   - Implement analysis from SciVal into the network to show meaningful connections between nodes (researchers)
   - Make sure our project's goals and requirements are fulfilled
   - Verify all features are implemented correctly and working smoothly
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
-  
-  ## 7. Others
-  ### Endpoint Description
-  
-  API endpoints are hosted on OpenShift. <br>
-  - http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/relations: Lists affiliates under "nodes" and their co-authorships under "links".
-  - http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/info: Information about each affiliates.
-  - http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/members: Affiliates' published papers. 
-  
+
+## 7. Others
+
+### Endpoint Description
+
+API endpoints are hosted on OpenShift. <br>
+
+- http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/relations: Lists affiliates under "nodes" and their co-authorships under "links".
+- http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/info: Information about each affiliates.
+- http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/members: Affiliates' published papers.
