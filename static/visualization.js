@@ -8,7 +8,6 @@ var svg = d3.select('svg')
       .append("g"),
   width = 1000,
   height = 1000;
-
 // svg objects
 var link, node;
 var node_texts;
@@ -30,6 +29,9 @@ d3.json('https://api.jsonbin.io/b/5fc2c9829abe4f6e7cacc7a9', function (error, _g
   initializeSimulation();
 });
 //////////// FORCE SIMULATION ////////////
+
+
+
 // force simulator
 var simulation = d3.forceSimulation();
 // set up the simulation and event to update locations after each tick
@@ -46,7 +48,7 @@ forceProperties = {
   },
   charge: {
     enabled: true,
-    strength: -30,
+    strength: -150,
     distanceMin: 1,
     distanceMax: 2000
   },
@@ -54,7 +56,7 @@ forceProperties = {
     enabled: false,
     strength: 0.7,
     iterations: 1,
-    radius: 5
+    radius: 50 // was 20
   },
   forceX: {
     enabled: true,
@@ -68,7 +70,7 @@ forceProperties = {
   },
   link: {
     enabled: true,
-    distance: 150,
+    distance: 120,
     iterations: 1
   }
 };
@@ -87,8 +89,6 @@ function initializeForces() {
   // apply properties to each of the forces
   updateForces();
 }
-
-
 // apply new force properties
 function updateForces() {
   // get each force by name and update the properties
@@ -131,9 +131,6 @@ function updateForces() {
 //////////// DISPLAY ////////////
 // generate the svg objects and force simulation
 function initializeDisplay() {
-
-
-
   // set the data and properties of link lines
   link = svg
     .append('g')
@@ -151,6 +148,7 @@ function initializeDisplay() {
     .data(graph.nodes)
     .enter()
     .append('circle')
+    // hovering over a node enlarges it to make it easier for the user to differentiate from others
     .on("mouseover", function(){
       d3.select(this)
         .transition()
@@ -161,16 +159,10 @@ function initializeDisplay() {
         .transition()
         .attr('r', 10);
     })
+    // clicking on a node displays info
     .on("mousedown", function(d) {
-
-      // displays information on click
-      // can't figure out how to display not in svg
-      svg.selectAll("text").remove();
-      svg.append("text")
-        .attr("x", 10)
-        .attr("y", 20)
-        .text("Name: " + d.id + "<br/>" 
-        + " Email: " );
+      d3.select('.info')
+      .text(`${d.id}`);
     })
     .call(
       d3
@@ -180,9 +172,9 @@ function initializeDisplay() {
         .on('end', dragended)
     );
   // click the node
-  node.on("click",function(d,i){
-            d3.select(this).attr("fill","red");
-        });
+  // node.on("click",function(d,i){
+  //           d3.select(this).attr("fill","red");
+  //       });
 
   // set the node texts
   node_texts = svg
@@ -197,10 +189,10 @@ function initializeDisplay() {
      .text(function(d){
         return d.id;
      });
-
   // visualize the graph
   updateDisplay();
 }
+
 // update the display based on the forces (but not positions)
 function updateDisplay() {
   color = d3.scaleOrdinal()
