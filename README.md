@@ -142,9 +142,9 @@ Stretch goals:
 
 - [Sprint 5](https://drive.google.com/file/d/1nUjtt4Gc22ImtzGj3upR-i6EgtvzTPtG/view?usp=sharing) (Demo: Dec. 3):
   - Imbed the visualization into WordPress
-  - Implement analysis from SciVal into the network to show meaningful connections between nodes (researchers)
   - Make sure our project's goals and requirements are fulfilled
   - Verify all features are implemented correctly and working smoothly
+  - Host API and database so data can be accessed
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
 
 ## 7. Future Work/Other
