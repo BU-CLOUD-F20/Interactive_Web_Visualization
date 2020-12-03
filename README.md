@@ -140,18 +140,22 @@ Stretch goals:
   - Continue to update project management with more concise user stories and specific tasks
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
 
-- Sprint 5 (Demo: Dec. 3):
+- [Sprint 5](https://drive.google.com/file/d/1nUjtt4Gc22ImtzGj3upR-i6EgtvzTPtG/view?usp=sharing) (Demo: Dec. 3):
   - Imbed the visualization into WordPress
   - Implement analysis from SciVal into the network to show meaningful connections between nodes (researchers)
   - Make sure our project's goals and requirements are fulfilled
   - Verify all features are implemented correctly and working smoothly
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
 
-## 7. Others
+## 7. Future Work/Other
+
+### Future Work
+- Use as a template for other departments.
+- Add affiliates information and links to cited works.
 
 ### Endpoint Description
 
-API endpoints are hosted on OpenShift. <br>
+API endpoints are hosted on OpenShift.
 
 - http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/relations: Lists affiliates under "nodes" and their co-authorships under "links".
 - http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/info: Information about each affiliates.
