@@ -160,3 +160,33 @@ API endpoints are hosted on OpenShift.
 - http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/relations: Lists affiliates under "nodes" and their co-authorships under "links".
 - http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/info: Information about each affiliates.
 - http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/members: Affiliates' published papers.
+
+
+### Instruction for API
+#### Using Python
+1. Clone this repository and cd to this directory.
+2. Build a python virtual environment within the directory, then download the dependencies by:
+```
+pip install -r requirements.txt
+```
+3. Run the application by:
+```
+python3 app.by
+```
+4. The application will be running on the following three endpoints:
+- localhost:8080/api/v1/relations
+- localhost:8080/api/v1/info
+- localhost:8080/api/v1/members
+
+#### Using Docker
+1. Clone this repository and cd to this directory.
+2. Have Docker daemon
+3. Build an image by:
+```
+docker build -t [image_name] .
+```
+4. Run a container by:
+```
+docker run -p 8080:8080 [image_name]
+```
+5. The application will be running on the aforementioned endpoints.
