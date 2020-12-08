@@ -144,13 +144,22 @@ Stretch goals:
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
 
 - [Final Presentation](https://www.youtube.com/watch?v=HvQZv-IsXAU) | [Presentation PDF](https://github.com/BU-CLOUD-F20/Interactive_Web_Visualization/blob/master/images/Final_Presentation.pdf)
+  - Final Submission of EC 528 Interactive Web Visualization Project
 
-## 7. Future Work/Other
-
-### Future Work
+## 7. Project Limitations & Future Work
 
 - Use as a template for other departments.
 - Add affiliates information and links to cited works.
+- Displaying name of publication when link is clicked on
+- Functional
+  - Search Bar
+  - Isolated Button
+    - Option for displaying only the nodes without links
+  - Extended Button
+    - Option for displaying only nodes with links
+- UI/UX clean up
+- Key/Legend
+- Zoom Scale
 
 ### Endpoint Description
 
