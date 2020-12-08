@@ -53,11 +53,6 @@ As stated by the description and our inital goals of the project, the MVP includ
   - Not all affilates will be presented at the initial landing on the visualization
   - Possible breakdown by department to then show affiliates within selected department
 
-- Admin accessibility
-  - With consultation from mentors, the database will be updated yearly with the collaborations from SciVal
-  - Once new data is entered, the pipeline of DB -> API -> Front-end visualization will be seamless and pass the "monkey test"
-  - Data will be secured within a database accessible to BU admins
-
 ## 4. Solution Concept
 
 Global Architectural Structure Of the Project:
@@ -140,16 +135,20 @@ Stretch goals:
   - Continue to update project management with more concise user stories and specific tasks
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
 
-- [Sprint 5](https://drive.google.com/file/d/1nUjtt4Gc22ImtzGj3upR-i6EgtvzTPtG/view?usp=sharing) (Demo: Dec. 3):
+- [Sprint 5](https://drive.google.com/file/d/1nUjtt4Gc22ImtzGj3upR-i6EgtvzTPtG/view?usp=sharing) | [Demo 5 PDF](https://github.com/BU-CLOUD-F20/Interactive_Web_Visualization/blob/master/images/Demo_5.pdf) (Demo: Dec. 3):
+
   - Imbed the visualization into WordPress
   - Make sure our project's goals and requirements are fulfilled
   - Verify all features are implemented correctly and working smoothly
   - Host API and database so data can be accessed
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
 
+- [Final Presentation](https://www.youtube.com/watch?v=HvQZv-IsXAU) | [Presentation PDF](https://github.com/BU-CLOUD-F20/Interactive_Web_Visualization/blob/master/images/Final_Presentation.pdf)
+
 ## 7. Future Work/Other
 
 ### Future Work
+
 - Use as a template for other departments.
 - Add affiliates information and links to cited works.
 
@@ -161,32 +160,43 @@ API endpoints are hosted on OpenShift.
 - http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/info: Information about each affiliates.
 - http://api-flask-ece-528-interactive-web-visualization.k-apps.osh.massopen.cloud/api/v1/members: Affiliates' published papers.
 
-
 ### Instruction for API
+
 #### Using Python
+
 1. Clone this repository and cd to this directory.
 2. Build a python virtual environment within the directory, then download the dependencies by:
+
 ```
 pip install -r requirements.txt
 ```
+
 3. Run the application by:
+
 ```
 python3 app.by
 ```
+
 4. The application will be running on the following three endpoints:
+
 - localhost:8080/api/v1/relations
 - localhost:8080/api/v1/info
 - localhost:8080/api/v1/members
 
 #### Using Docker
+
 1. Clone this repository and cd to this directory.
 2. Have Docker daemon
 3. Build an image by:
+
 ```
 docker build -t [image_name] .
 ```
+
 4. Run a container by:
+
 ```
 docker run -p 8080:8080 [image_name]
 ```
+
 5. The application will be running on the aforementioned endpoints.
