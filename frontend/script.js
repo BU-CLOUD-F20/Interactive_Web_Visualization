@@ -223,7 +223,50 @@ function initializeDisplay() {
   // visualize the graph
   updateDisplay();
 }
+/*
+var last;
+//	filtered types
+document.getElementById("isolated").addEventListener("click", function(){
+  console.log("isolated clicked")
+  
+    var linkedNodes = [];
+    count = -1;
+    graph.nodes.filter(function(d){
+      graph.links.forEach(function (o) {
+        if(((d.index == o.source.index) || (d.index == o.target.index )) &&(linkedByIndex[o.source.index + "," + o.target.index])){
+          if(last!=d.index){
+            last = d.index;
+            count = count + 1;
+            graph.nodes.splice(d.index, 1);
+            graph.links.splice(d.index, 1);
+            linkedNodes[count] = d.index;
+          }
+        }
+      })
+    })
+    
+    var gnodes = d3.selectAll('.nodes')
+      .data(linkedNodes)
+      .exit().remove();
 
+  updateDisplay();
+});
+document.getElementById("extended").addEventListener("click", function(){
+  console.log("extended clicked")
+  
+  //updateDisplay();
+});
+
+document.getElementById("submit").addEventListener("click", function(){
+  console.log("submit clicked")
+  var input = document.getElementById("input").value;
+  var element = svg.selectAll(".circle")
+      .data(graph.nodes.filter(function(d){
+        console.log(graph.nodes)
+        return graph.nodes == input;
+      }));
+   
+});*/
 // update the display based on the forces (but not positions)
 function updateDisplay() {
   color = d3.scaleOrdinal()
