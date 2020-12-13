@@ -143,7 +143,7 @@ Stretch goals:
   - Host API and database so data can be accessed
   - Keep up to date with Taiga project management so that clients are aware of progress/setbacks
 
-- [Final Presentation](https://www.youtube.com/watch?v=HvQZv-IsXAU) | [Presentation PDF](https://github.com/BU-CLOUD-F20/Interactive_Web_Visualization/blob/master/images/Final_Presentation.pdf)
+- [Final Presentation](https://www.youtube.com/watch?v=QSzN3Vrc5CE) | [Presentation PDF](https://github.com/BU-CLOUD-F20/Interactive_Web_Visualization/blob/master/images/Final_Presentation.pdf)
   - Final Submission of EC 528 Interactive Web Visualization Project
 
 ## 7. Project Limitations & Future Work
